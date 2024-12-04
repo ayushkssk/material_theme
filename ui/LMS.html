@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse" id="sidebarMenu">
+                <div class="position-sticky pt-3">
+                    <div class="logo mb-4">
+                        <img src="logo.png" alt="Library Logo" class="img-fluid">
+                        <h1 class="h5 text-white">Library Management System</h1>
+                    </div>
+                    
+                    <div class="nav-section">
+                        <h6 class="sidebar-heading text-muted px-3 mb-2">MAIN MENU</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">
+                                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-money-bill"></i> Fine Master
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-users"></i> Users
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-user-graduate"></i> Students
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-chalkboard-teacher"></i> Teachers / Staff
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-book"></i> Books
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-section mt-4">
+                        <h6 class="sidebar-heading text-muted px-3 mb-2">LOGS</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-exchange-alt"></i> Issue / Return
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-history"></i> Issue Logs
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-chart-bar"></i> Collection Reports
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <button class="btn btn-primary d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item">Dashboard</li>
+                            <li class="breadcrumb-item active">Dashboard Overview</li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <!-- Dashboard Grid -->
+                <div class="row g-4">
+                    <!-- Total Books -->
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="card-subtitle mb-2 text-muted">Total Books</h6>
+                                        <h2 class="card-title mb-0" id="total-books">34655</h2>
+                                    </div>
+                                    <div class="stat-icon icon-yellow">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-yellow"></div>
+                        </div>
+                    </div>
+
+                    <!-- Currently Issued -->
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="card-subtitle mb-2 text-muted">Currently Issued</h6>
+                                        <h2 class="card-title mb-0" id="currently-issued">2</h2>
+                                    </div>
+                                    <div class="stat-icon icon-green">
+                                        <i class="fas fa-share"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-green"></div>
+                        </div>
+                    </div>
+
+                    <!-- Add more cards following the same pattern -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="dashboard.js"></script>
+</body>
+</html>

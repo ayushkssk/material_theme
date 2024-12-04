@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard UI</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Time Section -->
+        <div class="time-widget">
+            <div class="date">4 Wed</div>
+            <div class="time">02:18</div>
+            <div class="period">PM</div>
+        </div>
+
+        <!-- Add this after the time-widget div -->
+        <div class="greeting-widget">
+            <h1 class="greeting-name">Ayush Singh</h1>
+            <h2 class="greeting-text">Good Afternoon!</h2>
+        </div>
+
+        <!-- Weather Widget -->
+        <div class="weather-widget">
+            <div class="weather-info">
+                <h3>Loading...</h3>
+                <div class="humidity">
+                    <span>Humidity --</span>
+                    <i class="fas fa-tint"></i>
+                </div>
+                <div class="feels-like">
+                    <i class="fas fa-temperature-high"></i>
+                    <span>Feels --°F</span>
+                </div>
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Locating...</span>
+                </div>
+            </div>
+            <div class="temperature">--°F</div>
+        </div>
+
+        <!-- Add after the weather widget -->
+        <div class="clock-terminal-container">
+            <!-- Analog Clock -->
+            <div class="analog-clock">
+                <div class="clock-face">
+                    <div class="hand hour-hand"></div>
+                    <div class="hand minute-hand"></div>
+                    <div class="hand second-hand"></div>
+                    <div class="center-dot"></div>
+                    <div class="markers">
+                        <!-- Clock markers will be added by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal Activity -->
+            <div class="terminal-widget">
+                <div class="terminal-header">
+                    <span class="terminal-title">System Activity</span>
+                    <div class="terminal-controls">
+                        <span class="control red"></span>
+                        <span class="control yellow"></span>
+                        <span class="control green"></span>
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Server Status -->
+        <div class="server-status">
+            <div class="status-header">
+                <h3>Server Status</h3>
+                <span class="refresh-btn">
+                    <i class="fas fa-sync-alt"></i>
+                </span>
+            </div>
+            <div class="status-grid">
+                <div class="status-item">
+                    <i class="fas fa-server"></i>
+                    <span class="status-name">Main Server</span>
+                    <span class="status-indicator online">Online</span>
+                    <span class="status-ping">23ms</span>
+                </div>
+                <div class="status-item">
+                    <i class="fas fa-database"></i>
+                    <span class="status-name">Database</span>
+                    <span class="status-indicator online">Online</span>
+                    <span class="status-ping">45ms</span>
+                </div>
+                <div class="status-item">
+                    <i class="fas fa-cloud"></i>
+                    <span class="status-name">Cloud Storage</span>
+                    <span class="status-indicator online">Online</span>
+                    <span class="status-ping">89ms</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Type here..." autocomplete="off">
+                <button onclick="searchWith('google')">Search</button>
+            </div>
+        </div>
+
+        <!-- Add after search bar -->
+        <div class="view-toggles">
+            <button onclick="toggleView('block')" class="view-toggle active">
+                <i class="fas fa-list"></i>
+            </button>
+            <button onclick="toggleView('card')" class="view-toggle">
+                <i class="fas fa-th-large"></i>
+            </button>
+            <button onclick="toggleView('picture')" class="view-toggle">
+                <i class="fas fa-image"></i>
+            </button>
+        </div>
+
+        <div class="search-results block-view"></div>
+
+        <!-- Search Engines -->
+        <div class="search-engines">
+            <div class="search-label">Search With</div>
+            <div class="engine-buttons">
+                <button class="google"><i class="fab fa-google"></i> Google</button>
+                <button class="duck"><i class="fas fa-duck"></i> Duck</button>
+                <button class="bing"><i class="fab fa-microsoft"></i> Bing</button>
+                <button class="brave"><i class="fas fa-shield-alt"></i> Brave</button>
+                <button class="youtube"><i class="fab fa-youtube"></i> YouTube</button>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="ai-tools-section">
+                <button class="ai-tool-btn active">
+                    <i class="fas fa-robot"></i> AI Tools
+                </button>
+                <div class="ai-tools-divider"></div>
+                <button class="ai-tool-btn">
+                    <i class="fab fa-openai"></i> ChatGPT
+                </button>
+                <button class="ai-tool-btn">
+                    <i class="fas fa-gem"></i> Gemini
+                </button>
+                <button class="ai-tool-btn">
+                    <i class="fas fa-code"></i> Copilot
+                </button>
+                <button class="ai-tool-btn">
+                    <i class="fab fa-adobe"></i> Adobe Firefly
+                </button>
+            </div>
+            <div class="social-icons">
+                <i class="fab fa-youtube"></i>
+                <i class="fas fa-envelope"></i>
+                <i class="fab fa-telegram"></i>
+                <i class="fas fa-phone"></i>
+                <i class="fab fa-reddit"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+        </div>
+
+        <!-- Add this after the existing theme-switcher div -->
+        <div class="theme-panel">
+            <div class="theme-panel-header">
+                <h3>Customize Theme</h3>
+                <button class="close-panel">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="theme-options">
+                <div class="option-section">
+                    <h4>Color Schemes</h4>
+                    <div class="color-options">
+                        <button class="color-btn active" data-theme="peach" style="background: #e88d67"></button>
+                        <button class="color-btn" data-theme="blue" style="background: #64b5f6"></button>
+                        <button class="color-btn" data-theme="green" style="background: #81c784"></button>
+                        <button class="color-btn" data-theme="purple" style="background: #ba68c8"></button>
+                        <button class="color-btn" data-theme="pink" style="background: #f06292"></button>
+                        <button class="color-btn" data-theme="orange" style="background: #ffa726"></button>
+                    </div>
+                </div>
+
+                <div class="option-section">
+                    <h4>Style Mode</h4>
+                    <div class="style-options">
+                        <button class="style-btn active" data-style="light">
+                            <i class="fas fa-sun"></i> Light
+                        </button>
+                        <button class="style-btn" data-style="dark">
+                            <i class="fas fa-moon"></i> Dark
+                        </button>
+                        <button class="style-btn" data-style="auto">
+                            <i class="fas fa-magic"></i> Auto
+                        </button>
+                    </div>
+                </div>
+
+                <div class="option-section">
+                    <h4>UI Density</h4>
+                    <div class="density-options">
+                        <button class="density-btn active" data-density="comfortable">Comfortable</button>
+                        <button class="density-btn" data-density="compact">Compact</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

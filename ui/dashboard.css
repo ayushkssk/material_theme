@@ -1,0 +1,233 @@
+/* Dashboard specific styles */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.stat-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Card variations */
+.card-yellow { border-top: 3px solid #FFB900; }
+.card-green { border-top: 3px solid #4CAF50; }
+.card-blue { border-top: 3px solid #2196F3; }
+.card-red { border-top: 3px solid #F44336; }
+.card-cyan { border-top: 3px solid #00BCD4; }
+.card-pink { border-top: 3px solid #FF4081; }
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-content h3 {
+    color: #666;
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    font-weight: normal;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.stat-icon i {
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Icon backgrounds */
+.icon-yellow { background: #FFB900; }
+.icon-green { background: #4CAF50; }
+.icon-blue { background: #2196F3; }
+.icon-red { background: #F44336; }
+.icon-cyan { background: #00BCD4; }
+.icon-pink { background: #FF4081; }
+
+/* Dashboard header */
+.dashboard-header {
+    padding: 20px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.dashboard-title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.breadcrumb {
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    padding: 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    background-color: #15192b !important;
+    width: 250px;
+    transition: all 0.3s;
+}
+
+/* Main content wrapper */
+main {
+    margin-left: 250px;
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+/* Logo section */
+.logo {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo img {
+    max-height: 40px;
+}
+
+/* Navigation styles */
+.nav-section {
+    padding: 10px 0;
+}
+
+.sidebar-heading {
+    padding: 10px 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5) !important;
+}
+
+.nav-link {
+    padding: 10px 15px;
+    color: rgba(255,255,255,0.8) !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff !important;
+}
+
+.nav-link.active {
+    background: #ff4081;
+    color: #fff !important;
+}
+
+.nav-link i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .sidebar {
+        margin-left: -250px;
+    }
+    
+    .sidebar.show {
+        margin-left: 0;
+    }
+    
+    main {
+        margin-left: 0;
+    }
+    
+    /* When sidebar is shown */
+    .sidebar.show + main {
+        margin-left: 250px;
+    }
+}
+
+/* Add styles for the toggle button */
+.sidebar-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 101;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sidebar-toggle {
+        display: block;
+    }
+}
+
+/* Overlay for mobile */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+}
+
+@media (max-width: 768px) {
+    .sidebar.show + .sidebar-overlay {
+        display: block;
+    }
+}
+
+/* Animation for sidebar */
+.sidebar {
+    transition: margin-left 0.3s ease-in-out;
+}
+
+main {
+    transition: margin-left 0.3s ease-in-out;
+} 
