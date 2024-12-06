@@ -230,4 +230,16 @@ main {
 
 main {
     transition: margin-left 0.3s ease-in-out;
+}
+
+/* Add these styles for the floating menu button */
+.btn-light.opacity-75:hover {
+    opacity: 1 !important;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-light.opacity-75 {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.1);
 } 
